@@ -10,12 +10,12 @@ function Login(){
                         <div className="card-body">
                         <form>
                             <div className="mb-3">
-                                <label for="exampleInputEmail1" className="form-label">User Name</label>
-                                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                                <label for="exampleInputEmail1" className="form-label" name="username">User Name</label>
+                                <input type="email" className="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp"/>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" className="form-label">Password</label>
-                                <input type="password" className="form-control" id="exampleInputPassword1"/>
+                                <label for="exampleInputPassword1" className="form-label" name="password">Password</label>
+                                <input type="password" className="form-control" name="password" id="exampleInputPassword1"/>
                             </div>
                             <div class="mb-3 form-check">
                                 <input type="checkbox" className="form-check-input" id="exampleCheck1"/>

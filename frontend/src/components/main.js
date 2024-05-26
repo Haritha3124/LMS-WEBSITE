@@ -1,3 +1,5 @@
+import React, { useContext } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from './header';
 import Home from './home';
 import Python from './Course_Details/python';
@@ -19,44 +21,41 @@ import MyCourses from './User/mycourses';
 import FavouriteCourse from './User/favourite_course';
 import About from './about';
 import Footer from './footer';
-import authContext from './Course_Details/context';
+import AuthContext, { AuthProvider } from './Course_Details/context';
 import PrivateRoute from './utils/privateroute';
-import {Routes,Route} from 'react-router-dom';
-import { useState } from 'react';
-
-
 
 function Main() {
-  const [course,setCourse] = useState([]);
-    return (
-      <authContext.Provider value={{user:course , setCourse}}>
+  let { loguser } = useContext(AuthContext);
+
+  return (
+    <AuthProvider>
       <div className="App">
-        < Header/>
+        <Header />
         <Routes>
-          <PrivateRoute path="/" element={<Home />}></PrivateRoute>
-          <PrivateRoute path="/about" element={<About />}></PrivateRoute>
-          <PrivateRoute path="/python" element={<Python />}></PrivateRoute>
-          <PrivateRoute path="/c" element={<C />}></PrivateRoute>
-          <PrivateRoute path="/mysql" element={<MySql />}></PrivateRoute>
-          <PrivateRoute path="/html" element={<Html />}></PrivateRoute>
-          <PrivateRoute path="/css" element={<Css />}></PrivateRoute>
-          <PrivateRoute path="/mongodb" element={<Mongodb />}></PrivateRoute>
-          <PrivateRoute path="/javascript" element={<Javascript />}></PrivateRoute>
-          <PrivateRoute path="/r" element={<R />}></PrivateRoute>
-          <PrivateRoute path="/java" element={<Java />}></PrivateRoute>
-          <PrivateRoute path="/php" element={<Php />}></PrivateRoute>
-          <PrivateRoute path="/user-login" element={<Login />}></PrivateRoute>
-          <PrivateRoute path='/profile-setting' element={<ProfileSettings/>}></PrivateRoute>
-          <PrivateRoute path='/user-changepassword' element={<ChangePassword/>} ></PrivateRoute>
-          <PrivateRoute path="/user-register" element={<Register />}></PrivateRoute>
-          <PrivateRoute path="/user-dashboard" element={<Dashboard />}></PrivateRoute>
-          <PrivateRoute path="/user-mycourses" element={<MyCourses />}></PrivateRoute>
-          <PrivateRoute path="/user-favourite_course" element={<FavouriteCourse />}></PrivateRoute>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/user-login" element={<Login />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/python" element={<PrivateRoute authenticated={loguser} element={Python} />}></Route>
+          <Route path="/c" element={<C />}></Route>
+          <Route path="/mysql" element={<MySql />}></Route>
+          <Route path="/html" element={<PrivateRoute authenticated={loguser} element={Html} />}></Route>
+          <Route path="/css" element={<PrivateRoute authenticated={loguser} element={Css} />}></Route>
+          <Route path="/mongodb" element={<PrivateRoute authenticated={loguser} element={Mongodb} />}></Route>
+          <Route path="/javascript" element={<PrivateRoute authenticated={loguser} element={Javascript} />}></Route>
+          <Route path="/r" element={<PrivateRoute authenticated={loguser} element={R} />}></Route>
+          <Route path="/java" element={<Java />}></Route>
+          <Route path="/php" element={<PrivateRoute authenticated={loguser} element={Php} />}></Route>
+          <Route path="/profile-setting" element={<PrivateRoute authenticated={loguser} element={ProfileSettings} />}></Route>
+          <Route path="/user-changepassword" element={<PrivateRoute authenticated={loguser} element={ChangePassword} />}></Route>
+          <Route path="/user-register" element={<Register />}></Route>
+          <Route path="/user-dashboard" element={<PrivateRoute authenticated={loguser} element={Dashboard} />}></Route>
+          <Route path="/user-mycourses" element={<PrivateRoute authenticated={loguser} element={MyCourses} />}></Route>
+          <Route path="/user-favourite_course" element={<PrivateRoute authenticated={loguser} element={FavouriteCourse} />}></Route>
         </Routes>
         <Footer />
       </div>
-      </authContext.Provider>
-    );
-  }
-  
-  export default Main;
+    </AuthProvider>
+  );
+}
+
+export default Main;

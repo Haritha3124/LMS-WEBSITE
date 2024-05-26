@@ -1,13 +1,8 @@
-import { Route, Redirect } from "react-router-dom";
+import React from 'react';
+import { Navigate } from 'react-router-dom';
 
-function PrivateRoute ({children, ...rest}) {
-    console.log("private route works")
-
-    const authenticated = false
-    
-    return(
-        <Route {...rest}>{ !authenticated ? <Redirect to="/login"></Redirect> : children}</Route>
-    )
+function PrivateRoute({ element: Element, authenticated, ...rest }) {
+    return authenticated ? <Element {...rest} /> : <Navigate to="/user-login" replace />;
 }
 
 export default PrivateRoute;

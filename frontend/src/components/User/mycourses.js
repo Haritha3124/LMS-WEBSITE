@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import axios from "axios";
-import AuthContext from "../Course_Details/context";
+// import AuthContext from "../Course_Details/context";
 import { Link } from "react-router-dom";
 
 function MyCourses() {
-  const { user } = useContext(AuthContext);
+  // const { user } = useContext(AuthContext);
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {

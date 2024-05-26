@@ -1,5 +1,8 @@
 import {Link} from 'react-router-dom';
+import AuthContext from './Course_Details/context';
+import { useContext } from 'react';
 function Header() {
+  let {logoutUser} = useContext(AuthContext);
     return (
     /* eslint-disable jsx-a11y/anchor-is-valid */ 
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark text-white" >
@@ -25,7 +28,7 @@ function Header() {
                   <li><Link className="dropdown-item" to="/user-register">Register</Link></li>
                   <li><hr className="dropdown-divider"/></li>
                   <li><Link className="dropdown-item" to="/user-dashboard">Dashboard</Link></li>
-                  <li><Link className="dropdown-item" to="#">Logout</Link></li> 
+                  <li><button className="dropdown-item" onClick={logoutUser}>Logout</button></li> 
                 </ul>
               </li>
             </ul>

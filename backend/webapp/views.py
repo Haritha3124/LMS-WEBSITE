@@ -1,6 +1,6 @@
 from rest_framework import generics
-from .models import Course, Mycourse, Note
-from .serializers import CourseSerializer, MyCourseSerializer, NoteSerializer
+from .models import Course, Mycourse
+from .serializers import CourseSerializer, MyCourseSerializer
 # from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from rest_framework import status

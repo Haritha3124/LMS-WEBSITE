@@ -14,7 +14,7 @@ function MySql() {
     axios.get("http://localhost:8000/courses/")
       .then((response) => {
         console.log("Courses:", response.data);
-        const correct = response.data.filter(course => course.course_name.toLowerCase() === "my sql");
+        const correct = response.data.filter(course => course.course_name.toLowerCase() === "mysql");
         setCourses(correct);
         // setLoading(false);
       })

@@ -1,8 +1,10 @@
 from django.contrib import admin
 from django.urls import path, include
 from webapp.views import CourseListCreateAPIView, CourseRetrieveUpdateDestroyAPIView,MycourseDetailView,MycourseListView, add_to_cart
+from webapp.views import register_user
 
 urlpatterns = [
+     path('register/', register_user, name='register'),
     path('admin/', admin.site.urls),
     path('courses/', CourseListCreateAPIView.as_view(), name='course-list-create'),
     path('courses/<int:pk>/', CourseRetrieveUpdateDestroyAPIView.as_view(), name='course-retrieve-update-destroy'),

@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react'; 
 import { jwtDecode } from "jwt-decode";
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast, Flip } from "react-toastify";
 
 const AuthContext = createContext({
     user: [], 
@@ -40,9 +41,31 @@ export const AuthProvider = ({ children }) => {
             setAuthTokens(data);
             setLogUser(jwtDecode(data.access));
             localStorage.setItem('authTokens', JSON.stringify(data));
+            toast.success("Logged In !", {
+                position: "top-center",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Flip,
+              });
             navigate('/');
         } else {
-            alert("Something went wrong");
+            // alert("Something went wrong");
+            toast.error("User Not Found !", {
+                position: "top-center",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Flip,
+              });
         } 
     };
 
@@ -104,6 +127,19 @@ export const AuthProvider = ({ children }) => {
     return (
         <AuthContext.Provider value={contextData}>
             {loading ? null : children}
+            <ToastContainer
+            position="top-center"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+            transition={Flip}
+        />
         </AuthContext.Provider>
     );
 };

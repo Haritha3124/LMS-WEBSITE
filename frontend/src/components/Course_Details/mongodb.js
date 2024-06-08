@@ -14,7 +14,7 @@ function Mongodb() {
     axios.get("http://localhost:8000/courses/")
       .then((response) => {
         console.log("Courses:", response.data);
-        const correct = response.data.filter(course => course.course_name.toLowerCase() === "mongo db");
+        const correct = response.data.filter(course => course.course_name.toLowerCase() === "mongodb");
         setCourses(correct);
         // setLoading(false);
       })

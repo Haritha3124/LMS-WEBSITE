@@ -22,10 +22,10 @@ import FavouriteCourse from './User/favourite_course';
 import About from './about';
 import Footer from './footer';
 import AuthContext, { AuthProvider } from './Course_Details/context';
-import PrivateRoute from './utils/privateroute';
+// import PrivateRoute from './utils/privateroute';
 
 function Main() {
-  let { loguser } = useContext(AuthContext);
+  // let { loguser } = useContext(AuthContext);
 
   return (
     <AuthProvider>
@@ -35,22 +35,23 @@ function Main() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/user-login" element={<Login />}></Route>
           <Route path="/about" element={<About />}></Route>
-          <Route path="/python" element={<PrivateRoute authenticated={loguser} element={Python} />}></Route>
+          <Route path="/python" element={<Python/>}></Route>
           <Route path="/c" element={<C />}></Route>
           <Route path="/mysql" element={<MySql />}></Route>
-          <Route path="/html" element={<PrivateRoute authenticated={loguser} element={Html} />}></Route>
-          <Route path="/css" element={<PrivateRoute authenticated={loguser} element={Css} />}></Route>
-          <Route path="/mongodb" element={<PrivateRoute authenticated={loguser} element={Mongodb} />}></Route>
-          <Route path="/javascript" element={<PrivateRoute authenticated={loguser} element={Javascript} />}></Route>
-          <Route path="/r" element={<PrivateRoute authenticated={loguser} element={R} />}></Route>
+          <Route path="/html" element={<Html/>}></Route>
+          <Route path="/css" element={<Css/>}></Route>
+          <Route path="/mongodb" element={<Mongodb/>}></Route>
+          <Route path="/javascript" element={<Javascript/>}></Route>
+          {/* <Route path="/r" element={<PrivateRoute authenticated={loguser} element={R} />}></Route> */}
+          <Route path="/r" element={<R/>}></Route>
           <Route path="/java" element={<Java />}></Route>
-          <Route path="/php" element={<PrivateRoute authenticated={loguser} element={Php} />}></Route>
-          <Route path="/profile-setting" element={<PrivateRoute authenticated={loguser} element={ProfileSettings} />}></Route>
-          <Route path="/user-changepassword" element={<PrivateRoute authenticated={loguser} element={ChangePassword} />}></Route>
+          <Route path="/php" element={<Php/>}></Route>
+          <Route path="/profile-setting" element={<ProfileSettings/>}></Route>
+          <Route path="/user-changepassword" element={<ChangePassword/>}></Route>
           <Route path="/user-register" element={<Register />}></Route>
-          <Route path="/user-dashboard" element={<PrivateRoute authenticated={loguser} element={Dashboard} />}></Route>
-          <Route path="/user-mycourses" element={<PrivateRoute authenticated={loguser} element={MyCourses} />}></Route>
-          <Route path="/user-favourite_course" element={<PrivateRoute authenticated={loguser} element={FavouriteCourse} />}></Route>
+          <Route path="/user-dashboard" element={<Dashboard/>}></Route>
+          <Route path="/user-mycourses" element={<MyCourses/>}></Route>
+          <Route path="/user-favourite_course" element={<FavouriteCourse/>}></Route>
         </Routes>
         <Footer />
       </div>

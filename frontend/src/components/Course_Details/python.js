@@ -6,9 +6,8 @@ import { ToastContainer, toast, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Python() {
-  const { setCourse, user } = useContext(AuthContext);
+  const { setCourse, user, authTokens } = useContext(AuthContext);
   const [courses, setCourses] = useState([]);
-  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios.get("http://localhost:8000/courses/")
@@ -16,17 +15,19 @@ function Python() {
         console.log("Courses:", response.data);
         const correct = response.data.filter(course => course.course_name.toLowerCase() === "python");
         setCourses(correct);
-        // setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching courses:", error);
-        // setLoading(false);
       });
   }, []);
   
 
   const addToCart = (course) => {
-    axios.get("http://localhost:8000/mycourses/")
+    axios.get("http://localhost:8000/mycourses/",{
+      headers:{
+        'Authorization':`Bearer ${authTokens.access}`
+      }
+    })
       .then((response) => {
         const existingCourses = response.data;
         const courseExist = existingCourses.find((item) => item.user_title === course.title);
@@ -39,6 +40,10 @@ function Python() {
             user_title: course.title,
             user_duration: course.duration,
             user_link: course.link,
+          },{
+            headers:{
+              'Authorization':`Bearer ${authTokens.access}`
+            }
           })
             .then((response) => {
               console.log("Course added to cart successfully:", response.data);
@@ -86,11 +91,6 @@ function Python() {
         console.error("Error checking existing courses:", error);
       });
   };
-
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
-
 
   return (
     <div> 

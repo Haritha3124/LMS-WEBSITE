@@ -1,14 +1,18 @@
-import React, {  useEffect, useState } from "react";
+import React, {  useContext, useEffect, useState } from "react";
 import axios from "axios";
-// import AuthContext from "../Course_Details/context";
 import { Link } from "react-router-dom";
+import AuthContext from "../Course_Details/context";
 
 function MyCourses() {
-  // const { user } = useContext(AuthContext);
   const [cartItems, setCartItems] = useState([]);
+  const {authTokens} = useContext(AuthContext)
 
   useEffect(() => {
-    axios.get("http://localhost:8000/mycourses/") 
+    axios.get("http://localhost:8000/mycourses/",{
+      headers:{
+        'Authorization':`Bearer ${authTokens.access}`
+      }
+    }) 
       .then((response) => {
         console.log("Fetched courses:", response.data);
         setCartItems(response.data);
@@ -16,10 +20,14 @@ function MyCourses() {
       .catch((error) => {
         console.error("Error fetching courses:", error);
       });
-  }, []);
+  }, [authTokens]);
 
   const removeFromCart = (id) => {
-    axios.delete(`http://localhost:8000/mycourses/${id}/`)
+    axios.delete(`http://localhost:8000/mycourses/${id}/`,{
+      headers:{
+        'Authorization':`Bearer ${authTokens.access}`
+      }
+    })
       .then((response) => {
         console.log("Course removed successfully:", response.data);
         setCartItems(cartItems.filter(course => course.id !== id));

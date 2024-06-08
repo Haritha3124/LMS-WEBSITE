@@ -10,8 +10,8 @@ class Course(models.Model):
     def __str__(self):
         return self.title
 
-    
 class Mycourse(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     user_course_name = models.CharField(max_length=50, default='Python')
     user_title = models.CharField(max_length=100)
     user_duration = models.CharField(max_length=50)
@@ -20,7 +20,3 @@ class Mycourse(models.Model):
     def __str__(self):
         return self.user_title
     
-
-class Note(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    body = models.TextField()

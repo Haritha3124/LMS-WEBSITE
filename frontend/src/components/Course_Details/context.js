@@ -6,6 +6,7 @@ const AuthContext = createContext({
     user: [], 
     setCourse: () => {}, 
     loginUser: () => {},
+    authTokens:null,
 });
 
 export default AuthContext;
@@ -23,7 +24,7 @@ export const AuthProvider = ({ children }) => {
         e.preventDefault();
         console.log("form submitted");
         let response = await fetch("http://127.0.0.1:8000/api/token/", {
-            method: 'POST',
+            method:'POST',
             headers:{
                 'Content-Type':'application/json'
             },
@@ -80,6 +81,7 @@ export const AuthProvider = ({ children }) => {
         user: course,
         setCourse,
         loguser: loguser,
+        authTokens:authTokens,
         loginUser: loginUser,
         logoutUser: logoutUser,
     };
@@ -94,7 +96,7 @@ export const AuthProvider = ({ children }) => {
             if(authTokens){
                 updateToken()
             }
-        }, 2000)
+        }, fourMinutes)
         return ()=> clearInterval(interval)
 
     }, [authTokens, loading])

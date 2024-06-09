@@ -32,13 +32,14 @@ function Javascript() {
     })
       .then((response) => {
         const existingCourses = response.data;
-        const courseExist = existingCourses.find((item) => item.user_title === course.title);
+        // const courseExist = existingCourses.find((item) => item.user_title === course.title);
+        const courseExist = existingCourses.find((item) => item.user_title === course.title && item.user_course_name === course.course_name);
         
         if (!courseExist) {
           setCourse([...user, course]);
 
           axios.post("http://localhost:8000/add_to_cart/", {
-            user_course: course.course,
+            user_course_name: course.course_name,
             user_title: course.title,
             user_duration: course.duration,
             user_link: course.link,

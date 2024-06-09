@@ -46,7 +46,7 @@ function Main() {
           <Route path="/r" element={<R/>}></Route>
           <Route path="/java" element={<Java />}></Route>
           <Route path="/php" element={<Php/>}></Route>
-          <Route path="/profile-setting" element={<ProfileSettings/>}></Route>
+          {/* <Route path="/profile-setting" element={<ProfileSettings/>}></Route> */}
           <Route path="/user-changepassword" element={<ChangePassword/>}></Route>
           <Route path="/user-register" element={<Register />}></Route>
           <Route path="/user-dashboard" element={<Dashboard/>}></Route>

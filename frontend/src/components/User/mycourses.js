@@ -47,6 +47,7 @@ function MyCourses() {
               <table className="table table-bordered">
                 <thead>
                   <tr>
+                    <th>Course Name</th>
                     <th>Title</th>
                     <th>Duration</th>
                     <th>Action</th>
@@ -55,6 +56,7 @@ function MyCourses() {
                 <tbody>
                   {cartItems.map((item) => (
                     <tr key={item.id}>
+                      <td>{item.user_course_name}</td>
                       <td>{item.user_title}</td>
                       <td>{item.user_duration}</td>
                       <td>

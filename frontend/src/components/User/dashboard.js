@@ -6,7 +6,7 @@ import {Routes,Route} from 'react-router-dom';
 function Dashboard(){
     return(
         <div className="container">
-            <div className="row">
+            <div className="row mb-5 mt-5 ">
                 <aside className="col-md-3">
                     <Sidebar />
                 </aside>

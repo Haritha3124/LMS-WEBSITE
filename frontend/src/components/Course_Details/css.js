@@ -119,19 +119,30 @@ function Css() {
         <div className="card-header">
             <h3>Course Videos</h3>
         </div>
-        <ul className="list-group list-group-flush">
-        <div>
-          {courses.map((course) => (
-            <li key={course.id} className='list-group-item'>{course.title}
-              <span className='float-end'>
-                  <span className='me-5'>{course.duration}</span>
-                  <Link to={course.link}><button className='btn btn-sm btn-danger'><i className='bi bi-youtube'></i></button></Link>
-                  <button onClick={() => addToCart(course)} className='btn btn-sm btn-primary m-2'><i className='bi bi-cart-plus'></i></button>
-              </span>
-            </li> 
-          ))}
-        </div>
-        </ul>
+        <div className="card-body">
+        <table className="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Course Name</th>
+                      {/* <th>Title</th> */}
+                      <th>Duration</th>
+                      <th>Add To Cart</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {courses.map((course) => (
+                      <tr key={course.id}>
+                        {/* <td>{course.user_course_name}</td> */}
+                        <td>{course.title}</td>
+                        <td>{course.duration}</td>
+                        <td className=" d-flex justify-content-center">
+                          <button onClick={() => addToCart(course)} className='btn btn-sm btn-primary m-2'><i className='bi bi-cart-plus'></i></button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+        </table>
+      </div>
       </div>
             
   </div>

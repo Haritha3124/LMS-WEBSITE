@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+// import React, { useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './header';
 import Home from './home';
@@ -13,7 +13,7 @@ import R from './Course_Details/r';
 import Java from './Course_Details/java';
 import Php from './Course_Details/php';
 import Login from './User/login';
-import ProfileSettings from './User/profile_setting';
+// import ProfileSettings from './User/profile_setting';
 import ChangePassword from './User/change_password';
 import Register from './User/register';
 import Dashboard from './User/dashboard';
@@ -21,7 +21,7 @@ import MyCourses from './User/mycourses';
 import FavouriteCourse from './User/favourite_course';
 import About from './about';
 import Footer from './footer';
-import AuthContext, { AuthProvider } from './Course_Details/context';
+import { AuthProvider } from './Course_Details/context';
 // import PrivateRoute from './utils/privateroute';
 
 function Main() {

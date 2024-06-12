@@ -1,9 +1,29 @@
 
 import {Link} from 'react-router-dom';
+import AuthContext from './Course_Details/context'; 
+import { useContext, useEffect } from 'react';
+import axios from 'axios';
 function Home() {
+
+  const {loguser} = useContext(AuthContext)
+
+  useEffect(() => {
+    axios.get("http://localhost:8000/api/")
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error("There was an error fetching the data!", error);
+      });
+  }, []);
+
+
     return (
       /* eslint-disable jsx-a11y/anchor-is-valid */
       <div className="container my-4">
+        <div className='d-flex justify-content-center'>
+          <h4>Hello {loguser.username}</h4>
+        </div>
         {/* Latest Course */}
         <h3 className="border-bottom pb-1 mt-4">Latest Courses </h3> 
         <div className="row justify-content-center row-cols-auto">

@@ -1,4 +1,4 @@
-// import React, { useContext } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './header';
 import Home from './home';
@@ -13,7 +13,6 @@ import R from './Course_Details/r';
 import Java from './Course_Details/java';
 import Php from './Course_Details/php';
 import Login from './User/login';
-// import ProfileSettings from './User/profile_setting';
 import ChangePassword from './User/change_password';
 import Register from './User/register';
 import Dashboard from './User/dashboard';
@@ -22,36 +21,32 @@ import FavouriteCourse from './User/favourite_course';
 import About from './about';
 import Footer from './footer';
 import { AuthProvider } from './Course_Details/context';
-// import PrivateRoute from './utils/privateroute';
+import PrivateRoute from './utils/privateroute';
 
 function Main() {
-  // let { loguser } = useContext(AuthContext);
-
   return (
     <AuthProvider>
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/user-login" element={<Login />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/python" element={<Python/>}></Route>
-          <Route path="/c" element={<C />}></Route>
-          <Route path="/mysql" element={<MySql />}></Route>
-          <Route path="/html" element={<Html/>}></Route>
-          <Route path="/css" element={<Css/>}></Route>
-          <Route path="/mongodb" element={<Mongodb/>}></Route>
-          <Route path="/javascript" element={<Javascript/>}></Route>
-          {/* <Route path="/r" element={<PrivateRoute authenticated={loguser} element={R} />}></Route> */}
-          <Route path="/r" element={<R/>}></Route>
-          <Route path="/java" element={<Java />}></Route>
-          <Route path="/php" element={<Php/>}></Route>
-          {/* <Route path="/profile-setting" element={<ProfileSettings/>}></Route> */}
-          <Route path="/user-changepassword" element={<ChangePassword/>}></Route>
-          <Route path="/user-register" element={<Register />}></Route>
-          <Route path="/user-dashboard" element={<Dashboard/>}></Route>
-          <Route path="/user-mycourses" element={<MyCourses/>}></Route>
-          <Route path="/user-favourite_course" element={<FavouriteCourse/>}></Route>
+          <Route path="/" element={<PrivateRoute element={Home} />} />
+          <Route path="/user-login" element={<Login />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/python" element={<Python />} />
+          <Route path="/c" element={<C />} />
+          <Route path="/mysql" element={<MySql />} />
+          <Route path="/html" element={<Html />} />
+          <Route path="/css" element={<Css />} />
+          <Route path="/mongodb" element={<Mongodb />} />
+          <Route path="/javascript" element={<Javascript />} />
+          <Route path="/r" element={<R />} />
+          <Route path="/java" element={<Java />} />
+          <Route path="/php" element={<Php />} />
+          <Route path="/user-changepassword" element={<ChangePassword />} />
+          <Route path="/user-register" element={<Register />} />
+          <Route path="/user-dashboard" element={<PrivateRoute element={Dashboard} />} />
+          <Route path="/user-mycourses" element={<PrivateRoute element={MyCourses} />} />
+          <Route path="/user-favourite_course" element={<PrivateRoute element={FavouriteCourse} />} />
         </Routes>
         <Footer />
       </div>

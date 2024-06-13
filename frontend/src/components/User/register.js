@@ -36,7 +36,7 @@ function Register() {
                     theme: "dark",
                     transition: Flip,
                   });
-                navigate('/login');
+                navigate('/user-login');
             })
             .catch(error => {
                 console.error('Error registering user:', error);

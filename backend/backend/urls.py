@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from webapp.views import CourseListCreateAPIView, CourseRetrieveUpdateDestroyAPIView,MycourseDetailView,MycourseListView, add_to_cart
+from webapp.views import CourseListCreateAPIView, CourseRetrieveUpdateDestroyAPIView,MycourseDetailView,MycourseListView,change_password, add_to_cart
 from webapp.views import register_user
 
 urlpatterns = [

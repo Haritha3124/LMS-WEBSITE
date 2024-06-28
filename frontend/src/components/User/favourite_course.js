@@ -1,6 +1,6 @@
 import React, {  useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import AuthContext from "../Course_Details/context";
 
 function FavouriteCourses() {
@@ -60,11 +60,11 @@ function FavouriteCourses() {
                       <td>{item.user_title}</td>
                       <td>{item.user_duration}</td>
                       <td>
-                        <Link to={item.user_link}>
+                        {/* <Link to={item.user_link}>
                           <button className="btn btn-sm btn-danger">
                             <i className="bi bi-youtube"></i> Watch
                           </button>
-                        </Link>
+                        </Link> */}
                         <button
                           onClick={() => removeCart(item.id)}
                           className="btn btn-sm btn-danger m-2"

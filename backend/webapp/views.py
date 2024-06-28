@@ -77,10 +77,6 @@ def add_to_fav(request):
 
 
 
-
-
-
-
 @api_view(['POST'])
 def register_user(request):
     if request.method == 'POST':

@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom';
 import AuthContext from './Course_Details/context';
 import { useContext } from 'react';
+import ChangePassword from './User/change_password';
 function Header() {
   let {logoutUser} = useContext(AuthContext);
     return (
@@ -17,17 +18,16 @@ function Header() {
                 <Link className="nav-link active" aria-current="page" to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <Link to="/user-mycourses" className="nav-link">Courses</Link>
+                <Link to="/user-mycourses" className="nav-link">My Courses</Link>
               </li>
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   User
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  {/* <li><Link className="dropdown-item" to="/user-login">Login</Link></li> */}
-                  {/* <li><Link className="dropdown-item" to="/user-register">Register</Link></li> */}
                   <li><hr className="dropdown-divider"/></li>
-                  <li><Link className="dropdown-item" to="/user-dashboard">Dashboard</Link></li>
+                  <li><Link className="dropdown-item" to="/user-favourite_course">Favourite Courses</Link></li>
+                  <li><Link className="dropdown-item" to="/user-changepassword">Change Password</Link></li>
                   <li><button className="dropdown-item" onClick={logoutUser}>Logout</button></li> 
                 </ul>
               </li>

@@ -15,7 +15,6 @@ import Php from './Course_Details/php';
 import Login from './User/login';
 import ChangePassword from './User/change_password';
 import Register from './User/register';
-import Dashboard from './User/dashboard';
 import MyCourses from './User/mycourses';
 import FavouriteCourse from './User/favourite_course';
 import About from './about';
@@ -44,7 +43,6 @@ function Main() {
           <Route path="/php" element={<Php />} />
           <Route path="/user-changepassword" element={<ChangePassword />} />
           <Route path="/user-register" element={<Register />} />
-          <Route path="/user-dashboard" element={<PrivateRoute element={Dashboard} />} />
           <Route path="/user-mycourses" element={<PrivateRoute element={MyCourses} />} />
           <Route path="/user-favourite_course" element={<PrivateRoute element={FavouriteCourse} />} />
         </Routes>

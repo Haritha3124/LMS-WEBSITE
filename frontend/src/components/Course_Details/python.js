@@ -212,7 +212,7 @@ function Python() {
                         </td>
                         <td>
                           <div className=" d-flex justify-content-center">
-                            <button onClick={() => addToFav(course)} className='btn btn-sm btn-primary m-2'><i className='bi bi-cart-plus'></i></button>
+                            <button onClick={() => addToFav(course)} className='btn btn-sm btn-danger m-2'><i class="bi bi-emoji-heart-eyes"></i></button>
                           </div>
                         </td>
                       </tr>
@@ -221,7 +221,7 @@ function Python() {
         </table>
       </div>
     </div>
-            
+
   </div>
   <ToastContainer
       position="top-center"

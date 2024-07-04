@@ -93,9 +93,77 @@ function Css() {
         console.error("Error checking existing courses:", error);
       });
   };
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
+  const addToFav = (course) => {
+    axios.get("http://localhost:8000/favouritecourses/",{
+      headers:{
+        'Authorization':`Bearer ${authTokens.access}`
+      }
+    })
+      .then((response) => {
+        const existingCourses = response.data;
+        // const courseExist = existingCourses.find((item) => item.user_title === course.title);
+        const courseExist = existingCourses.find((item) => item.user_title === course.title && item.user_course_name === course.course_name);
+
+        
+        if (!courseExist) {
+          setCourse([...user, course]);
+
+          axios.post("http://localhost:8000/add_to_fav/", {
+            user_course_name: course.course_name,
+            user_title: course.title,
+            user_duration: course.duration,
+            user_link: course.link,
+          },{
+            headers:{
+              'Authorization':`Bearer ${authTokens.access}`
+            }
+          })
+            .then((response) => {
+              console.log("Course added to cart successfully:", response.data);
+              toast.success("Course added successfully!", {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Flip,
+              });
+            })
+            .catch((error) => {
+              console.error("Error adding course to cart:", error);
+              toast.error("Error adding course to cart!", {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Flip,
+              });
+            });
+        } else {
+          toast.error("Course already exists!", {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Flip,
+          });
+        }
+      })
+      .catch((error) => {
+        console.error("Error checking existing courses:", error);
+      });  
+  };
   
   return (
     <div> 
@@ -123,19 +191,25 @@ function Css() {
                   <thead>
                     <tr>
                       <th>Course Name</th>
-                      {/* <th>Title</th> */}
                       <th>Duration</th>
                       <th>Add To Cart</th>
+                      <th>Add To Favourite</th>
                     </tr>
                   </thead>
                   <tbody>
                     {courses.map((course) => (
                       <tr key={course.id}>
-                        {/* <td>{course.user_course_name}</td> */}
                         <td>{course.title}</td>
                         <td>{course.duration}</td>
-                        <td className=" d-flex justify-content-center">
-                          <button onClick={() => addToCart(course)} className='btn btn-sm btn-primary m-2'><i className='bi bi-cart-plus'></i></button>
+                        <td>
+                          <div className=" d-flex justify-content-center">
+                            <button onClick={() => addToCart(course)} className='btn btn-sm btn-primary m-2'><i className='bi bi-cart-plus'></i></button>
+                          </div>
+                        </td>
+                        <td>
+                          <div className=" d-flex justify-content-center">
+                            <button onClick={() => addToFav(course)} className='btn btn-sm btn-danger m-2'><i class="bi bi-emoji-heart-eyes"></i></button>
+                          </div>
                         </td>
                       </tr>
                     ))}

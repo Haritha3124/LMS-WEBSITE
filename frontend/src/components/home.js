@@ -22,7 +22,7 @@ function Home() {
       /* eslint-disable jsx-a11y/anchor-is-valid */
       <div className="container my-4">
         <div className='d-flex justify-content-center'>
-          <h4>Hello {loguser.username}</h4>
+          <h4>Hello {loguser.username} !!</h4>
         </div>
         {/* Latest Course */}
         <h3 className="border-bottom pb-1 mt-4">Latest Courses </h3> 

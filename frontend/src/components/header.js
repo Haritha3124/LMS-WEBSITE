@@ -1,7 +1,6 @@
 import {Link} from 'react-router-dom';
 import AuthContext from './Course_Details/context';
 import { useContext } from 'react';
-import ChangePassword from './User/change_password';
 function Header() {
   let {logoutUser} = useContext(AuthContext);
     return (

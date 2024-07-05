@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 function Java() {
   const { setCourse, user, authTokens } = useContext(AuthContext);
   const [courses, setCourses] = useState([]);
-  // const [loading, setLoading] = useState(true);
+  const [buttonsDisabled, setButtonsDisabled] = useState(false);
 
   useEffect(() => {
     axios.get("http://localhost:8000/courses/")
@@ -22,6 +22,12 @@ function Java() {
         // setLoading(false);
       });
   }, []);
+
+  const handleButtonClick = (action, course) => {
+    setButtonsDisabled(true);
+    action(course);
+    setTimeout(() => setButtonsDisabled(false), 5000);
+  };
 
   const addToCart = (course) => {
     axios.get("http://localhost:8000/mycourses/",{
@@ -206,12 +212,12 @@ function Java() {
                         <td>{course.duration}</td>
                         <td>
                           <div className=" d-flex justify-content-center">
-                            <button onClick={() => addToCart(course)} className='btn btn-sm btn-primary m-2'><i className='bi bi-cart-plus'></i></button>
+                            <button onClick={() => handleButtonClick(addToCart, course)} className='btn btn-sm btn-primary m-2' disabled={buttonsDisabled}><i className='bi bi-cart-plus'></i></button>
                           </div>
                         </td>
                         <td>
                           <div className=" d-flex justify-content-center">
-                            <button onClick={() => addToFav(course)} className='btn btn-sm btn-danger m-2'><i class="bi bi-emoji-heart-eyes"></i></button>
+                            <button onClick={() => handleButtonClick(addToFav, course)} className='btn btn-sm btn-danger m-2' disabled={buttonsDisabled}><i class="bi bi-emoji-heart-eyes"></i></button>
                           </div>
                         </td>
                       </tr>

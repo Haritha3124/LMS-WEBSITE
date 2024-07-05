@@ -242,25 +242,6 @@ function Python() {
       theme="dark"
       transition={Flip}
   />
-  {/* <h3 className="border-bottom pb-1 mt-4">Related Courses </h3> 
-            <div className="row">
-                <div className="col-12 col-md-3 col-sm-6">
-                    <div className="card ">
-                        <Link to='../html'><img src="/assats/html.jpeg" className="card-img-top" alt="..." /></Link>
-                        <div className="card-body">
-                        <Link to="../html" className="btn btn-primary float-end">HTML</Link> 
-                        </div>
-                    </div>
-                </div>
-                <div className="col-12 col-md-3 col-sm-6">
-                    <div className="card">
-                    <Link to='../css'><img src="/assats/css.jpeg" className="card-img-top" alt="..." /></Link>
-                        <div className="card-body">
-                        <Link to="../css" className="btn btn-primary float-end">CSS</Link>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
   </div>
   );
 }

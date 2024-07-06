@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import AuthContext from "../Course_Details/context";
 import { toast, Flip } from "react-toastify";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function ChangePassword() {
     const { authTokens } = useContext(AuthContext);
@@ -50,6 +51,9 @@ function ChangePassword() {
                 theme: "dark",
                 transition: Flip,
             });
+            setOldPassword('');
+            setNewPassword('');
+            setConfirmPassword('');
         } else {
             toast.error("Error changing password!", {
                 position: "top-center",
@@ -67,43 +71,26 @@ function ChangePassword() {
 
     return (
         <div className="container">
-            <div className="row">
-                <div className="col-6 offset-2">
-                    <div className="card">
-                        <h5 className="card-header mt-5">Change Password</h5>
+            <div className="row justify-content-center">
+                <div className="col-12 col-md-8 col-lg-6">
+                    <div className="card my-5">
+                        <h5 className="card-header">Change Password</h5>
                         <div className="card-body">
                             <form onSubmit={handleSubmit}>
                                 <div className="mb-3">
                                     <label htmlFor="password-old" className="form-label">Old Password:</label>
-                                    <input 
-                                        type="password" 
-                                        className="form-control" 
-                                        id="password-old" 
-                                        value={oldPassword}
-                                        onChange={(e) => setOldPassword(e.target.value)}
-                                    />
+                                    <input type="password" className="form-control" id="password-old" value={oldPassword} onChange={(e) => setOldPassword(e.target.value)}/>
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="password-new" className="form-label">New Password:</label>
-                                    <input 
-                                        type="password" 
-                                        className="form-control" 
-                                        id="password-new" 
-                                        value={newPassword}
-                                        onChange={(e) => setNewPassword(e.target.value)}
-                                    />
+                                    <input type="password" className="form-control" id="password-new" value={newPassword} onChange={(e) => setNewPassword(e.target.value)}/>
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="password-confirm" className="form-label">Confirm Password:</label>
                                     <input 
-                                        type="password" 
-                                        className="form-control" 
-                                        id="password-confirm" 
-                                        value={confirmPassword}
-                                        onChange={(e) => setConfirmPassword(e.target.value)}
-                                    />
+                                        type="password" className="form-control" id="password-confirm" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
                                 </div>
-                                <button type="submit" className="btn btn-primary">Submit</button>
+                                <button type="submit" className="btn btn-primary w-100">Submit</button>
                             </form>
                         </div>
                     </div>

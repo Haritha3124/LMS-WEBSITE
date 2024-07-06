@@ -117,7 +117,6 @@ function Home() {
           </div>
         </div>
         {/* End Random Course */}
-
         {/* Student Testimonial */}
         <h3 className="border-bottom pb-1 my-4 mt-3">About </h3>
         <div id="carouselExampleControls" className="carousel slide bg-dark text-white py-4" data-bs-ride="carousel">

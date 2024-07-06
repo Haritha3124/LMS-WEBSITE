@@ -37,14 +37,6 @@
   }
 } */
 
-.image{
-  height:200px;
-  width:90%;
-  align-items: center;
-  margin-left: 1em;
-  margin-top: 1em;
-}
-
 .App{
   min-height: 100vh;
   display: flex;

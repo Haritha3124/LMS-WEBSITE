@@ -31,7 +31,7 @@ class FavouritecourseSerializer(serializers.ModelSerializer):
         user_course_name = data['user_course_name']
         user_title = data['user_title']
         
-        if Mycourse.objects.filter(user=user, user_course_name=user_course_name, user_title=user_title).exists():
+        if Favouritecourse.objects.filter(user=user, user_course_name=user_course_name, user_title=user_title).exists():
             raise serializers.ValidationError("Course already exists in the cart.")
         
         return data

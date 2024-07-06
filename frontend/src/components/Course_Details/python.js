@@ -218,7 +218,7 @@ function Python() {
                         </td>
                         <td>
                           <div className=" d-flex justify-content-center">
-                            <button onClick={() => handleButtonClick(addToFav, course)} className='btn btn-sm btn-danger m-2' disabled={buttonsDisabled}><i class="bi bi-emoji-heart-eyes"></i></button>
+                            <button onClick={() => handleButtonClick(addToFav, course)} className='btn btn-sm btn-danger m-2' disabled={buttonsDisabled}><i className="bi bi-emoji-heart-eyes"></i></button>
                           </div>
                         </td>
                       </tr>

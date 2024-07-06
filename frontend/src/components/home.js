@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import AuthContext from './Course_Details/context'; 
 import { useContext, useEffect } from 'react';
 import axios from 'axios';
+import './text.css'
 function Home() {
 
   const {loguser} = useContext(AuthContext)
@@ -19,10 +20,9 @@ function Home() {
 
 
     return (
-      /* eslint-disable jsx-a11y/anchor-is-valid */
       <div className="container my-4">
         <div className='d-flex justify-content-center'>
-          <h4>Hello {loguser.username} !!</h4>
+          <h4 className='animated-text'>Hello {loguser.username} !!</h4>
         </div>
         {/* Latest Course */}
         <h3 className="border-bottom pb-1 mt-4">Latest Courses </h3> 
@@ -117,52 +117,7 @@ function Home() {
           </div>
         </div>
         {/* End Random Course */}
-        {/* featured Teachers */}
-        {/* <h3 className="border-bottom pb-1 my-4 mt-3">Featured Teachers  </h3>
-        <div className="row justify-content-center row-cols-auto">
-          <div className="col-12 col-md-2 col-sm-4">
-            <div className="card">
-              <Link to='/detail/11'><img src="logo512.png" className="card-img-top" alt="..." /></Link>
-              <div className="card-body">
-              <Link to="/detail/11" className="btn btn-primary float-end">React</Link>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-md-2 col-sm-4">
-            <div className="card">
-              <Link to='/detail/12'><img src="logo512.png" className="card-img-top" alt="..." /></Link>
-              <div className="card-body">
-              <Link to="/detail/12" className="btn btn-primary float-end">React</Link>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-md-2 col-sm-4">
-            <div className="card">
-              <Link to='/detail/13'><img src="logo512.png" className="card-img-top" alt="..." /></Link>
-              <div className="card-body">
-              <Link to="/detail/13" className="btn btn-primary float-end">React</Link>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-md-2 col-sm-4">
-            <div className="card">
-              <Link to='/detail/14'><img src="logo512.png" className="card-img-top" alt="..." /></Link>
-              <div className="card-body">
-              <Link to="/detail/14" className="btn btn-primary float-end">React</Link>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-md-2 col-sm-4">
-            <div className="card">
-              <Link to='/detail/1'><img src="logo512.png" className="card-img-top" alt="..." /></Link>
-              <div className="card-body">
-              <Link to="/detail/15" className="btn btn-primary float-end">React</Link>
-              </div>
-            </div>
-          </div>
-        </div> */}
-        {/* End Featured Teachers */}
-        {/* <a className="float-end" href="#">See All</a>  */}
+
         {/* Student Testimonial */}
         <h3 className="border-bottom pb-1 my-4 mt-3">About </h3>
         <div id="carouselExampleControls" className="carousel slide bg-dark text-white py-4" data-bs-ride="carousel">

@@ -15,11 +15,9 @@ function Java() {
         console.log("Courses:", response.data);
         const correct = response.data.filter(course => course.course_name.toLowerCase() === "java");
         setCourses(correct);
-        // setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching courses:", error);
-        // setLoading(false);
       });
   }, []);
 
@@ -37,7 +35,6 @@ function Java() {
     })
       .then((response) => {
         const existingCourses = response.data;
-        // const courseExist = existingCourses.find((item) => item.user_title === course.title);
         const courseExist = existingCourses.find((item) => item.user_title === course.title && item.user_course_name === course.course_name);
         
         if (!courseExist) {
@@ -55,7 +52,7 @@ function Java() {
           })
             .then((response) => {
               console.log("Course added to cart successfully:", response.data);
-              toast.success("Course added successfully!", {
+              toast.success("Course added to cart successfully!", {
                 position: "top-center",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -82,7 +79,7 @@ function Java() {
               });
             });
         } else {
-          toast.error("Course already exists!", {
+          toast.error("Course already exist in cart!", {
             position: "top-center",
             autoClose: 2000,
             hideProgressBar: false,
@@ -96,7 +93,7 @@ function Java() {
         }
       })
       .catch((error) => {
-        console.error("Error checking existing courses:", error);
+        console.error("Error checking existing course in cart:", error);
       });
   };
   const addToFav = (course) => {
@@ -107,7 +104,6 @@ function Java() {
     })
       .then((response) => {
         const existingCourses = response.data;
-        // const courseExist = existingCourses.find((item) => item.user_title === course.title);
         const courseExist = existingCourses.find((item) => item.user_title === course.title && item.user_course_name === course.course_name);
 
         
@@ -125,8 +121,8 @@ function Java() {
             }
           })
             .then((response) => {
-              console.log("Course added to cart successfully:", response.data);
-              toast.success("Course added successfully!", {
+              console.log("Course added to Favourite successfully:", response.data);
+              toast.success("Course added to Favourite successfully!", {
                 position: "top-center",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -139,8 +135,8 @@ function Java() {
               });
             })
             .catch((error) => {
-              console.error("Error adding course to cart:", error);
-              toast.error("Error adding course to cart!", {
+              console.error("Error adding course to Favourite:", error);
+              toast.error("Error adding course to Favourite!", {
                 position: "top-center",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -153,7 +149,7 @@ function Java() {
               });
             });
         } else {
-          toast.error("Course already exists!", {
+          toast.error("Course already exist in Favourite!", {
             position: "top-center",
             autoClose: 2000,
             hideProgressBar: false,
@@ -167,7 +163,7 @@ function Java() {
         }
       })
       .catch((error) => {
-        console.error("Error checking existing courses:", error);
+        console.error("Error checking existing course in Favourite:", error);
       });  
   };
   

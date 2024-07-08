@@ -57,7 +57,7 @@ function C() {
           })
             .then((response) => {
               console.log("Course added to cart successfully:", response.data);
-              toast.success("Course added successfully!", {
+              toast.success("Course added to cart successfully!", {
                 position: "top-center",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -84,7 +84,7 @@ function C() {
               });
             });
         } else {
-          toast.error("Course already exists!", {
+          toast.error("Course already exist in cart!", {
             position: "top-center",
             autoClose: 2000,
             hideProgressBar: false,
@@ -98,7 +98,7 @@ function C() {
         }
       })
       .catch((error) => {
-        console.error("Error checking existing courses:", error);
+        console.error("Error checking existing course in cart:", error);
       });
   };
   const addToFav = (course) => {
@@ -127,8 +127,8 @@ function C() {
             }
           })
             .then((response) => {
-              console.log("Course added to cart successfully:", response.data);
-              toast.success("Course added successfully!", {
+              console.log("Course added to Favourite successfully:", response.data);
+              toast.success("Course added to Favourite successfully!", {
                 position: "top-center",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -141,8 +141,8 @@ function C() {
               });
             })
             .catch((error) => {
-              console.error("Error adding course to cart:", error);
-              toast.error("Error adding course to cart!", {
+              console.error("Error adding course to Favourite:", error);
+              toast.error("Error adding course to Favourite!", {
                 position: "top-center",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -155,7 +155,7 @@ function C() {
               });
             });
         } else {
-          toast.error("Course already exists!", {
+          toast.error("Course already exist in Favourite!", {
             position: "top-center",
             autoClose: 2000,
             hideProgressBar: false,
@@ -169,7 +169,7 @@ function C() {
         }
       })
       .catch((error) => {
-        console.error("Error checking existing courses:", error);
+        console.error("Error checking existing course in Favourite:", error);
       });  
   };
   

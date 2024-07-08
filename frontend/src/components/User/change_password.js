@@ -76,7 +76,7 @@ function ChangePassword() {
                     <div className="card my-5">
                         <h5 className="card-header">Change Password</h5>
                         <div className="card-body">
-                            <form onSubmit={handleSubmit}>
+                            <form onSubmit={handleSubmit} autoComplete='off'>
                                 <div className="mb-3">
                                     <label htmlFor="password-old" className="form-label">Old Password:</label>
                                     <input type="password" className="form-control" id="password-old" value={oldPassword} onChange={(e) => setOldPassword(e.target.value)}/>

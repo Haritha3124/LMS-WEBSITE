@@ -60,17 +60,8 @@ function MyCourses() {
                       <td>{item.user_title}</td>
                       <td>{item.user_duration}</td>
                       <td>
-                        <Link to={item.user_link}>
-                          <button className="btn btn-sm btn-danger">
-                            <i className="bi bi-youtube"></i> Watch
-                          </button>
-                        </Link>
-                        <button
-                          onClick={() => removeFromCart(item.id)}
-                          className="btn btn-sm btn-danger m-2"
-                        >
-                          Remove
-                        </button>
+                        <Link to={item.user_link}><button className="btn btn-sm btn-danger m-2"><i className="bi bi-youtube"></i> Watch</button></Link>
+                        <button onClick={() => removeFromCart(item.id)} className="btn btn-sm btn-danger m-2">Remove</button>
                       </td>
                     </tr>
                   ))}

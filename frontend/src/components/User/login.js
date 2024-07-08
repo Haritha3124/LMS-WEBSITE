@@ -6,11 +6,11 @@ function Login() {
     const { loginUser } = useContext(AuthContext);
 
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col-6 offset-2">
-                    <div className="card">
-                        <h5 className="card-header mt-5">User Login</h5>
+        <div className="container mt-5 mb-5">
+            <div className="row justify-content-center">
+                <div className="col-12 col-md-6 col-lg-10">
+                    <div className="card mt-5">
+                        <h5 className="card-header">User Login</h5>
                         <div className="card-body">
                             <form onSubmit={loginUser} autoComplete='off'>
                                 <div className="mb-3">

@@ -61,7 +61,7 @@ function Register() {
                     <div className="card">
                         <h5 className="card-header mt-5">User Register</h5>
                         <div className="card-body">
-                            <form onSubmit={handleSubmit}>
+                            <form onSubmit={handleSubmit} autoComplete="off">
                                 <div className="mb-3">
                                     <label htmlFor="first_name" className="form-label">First Name</label>
                                     <input type="text" className="form-control" id="first_name" value={formData.first_name} onChange={handleChange} />

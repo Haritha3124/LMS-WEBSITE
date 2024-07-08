@@ -41,7 +41,7 @@ function Main() {
           <Route path="/r" element={<R />} />
           <Route path="/java" element={<Java />} />
           <Route path="/php" element={<Php />} />
-          <Route path="/user-changepassword" element={<ChangePassword />} />
+          <Route path="/user-changepassword" element={<PrivateRoute element={ChangePassword}/>} />
           <Route path="/user-register" element={<Register />} />
           <Route path="/user-mycourses" element={<PrivateRoute element={MyCourses} />} />
           <Route path="/user-favourite_course" element={<PrivateRoute element={FavouriteCourse} />} />

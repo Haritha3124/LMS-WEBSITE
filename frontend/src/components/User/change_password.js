@@ -2,12 +2,15 @@ import React, { useState, useContext } from 'react';
 import AuthContext from "../Course_Details/context";
 import { toast, Flip } from "react-toastify";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
 
 function ChangePassword() {
-    const { authTokens } = useContext(AuthContext);
+    const { authTokens, logoutUser } = useContext(AuthContext);
     const [oldPassword, setOldPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -54,6 +57,10 @@ function ChangePassword() {
             setOldPassword('');
             setNewPassword('');
             setConfirmPassword('');
+            setTimeout(() => {
+                logoutUser();
+                navigate('/user-login');
+            }, 2000);
         } else {
             toast.error("Error changing password!", {
                 position: "top-center",
@@ -74,7 +81,7 @@ function ChangePassword() {
             <div className="row justify-content-center">
                 <div className="col-12 col-md-8 col-lg-6">
                     <div className="card my-5">
-                        <h5 className="card-header">Change Password</h5>
+                        <h5 className="BackHeader card-header d-flex justify-content-center p-3">Change Password</h5>
                         <div className="card-body">
                             <form onSubmit={handleSubmit} autoComplete='off'>
                                 <div className="mb-3">

@@ -6,11 +6,11 @@ function Login() {
     const { loginUser } = useContext(AuthContext);
 
     return (
-        <div className="container mt-5 mb-5">
-            <div className="row justify-content-center">
-                <div className="col-12 col-md-6 col-lg-10">
-                    <div className="card mt-5">
-                        <h5 className="card-header">User Login</h5>
+        <div className="container-fluid">
+            <div className="row justify-content-center align-items-center" style={{ height:"80vh"}}>
+                <div className="col-12 col-md-6 col-lg-4">
+                    <div className="card">
+                        <h5 className="card-header text-center">User Login</h5>
                         <div className="card-body">
                             <form onSubmit={loginUser} autoComplete='off'>
                                 <div className="mb-3">
@@ -21,8 +21,8 @@ function Login() {
                                     <label htmlFor="password" className="form-label">Password</label>
                                     <input type="password" className="form-control" name="password" id="password" required />
                                 </div>
-                                <button type="submit" className="btn btn-primary">Login</button>
-                                <Link to="/user-register" className='float-end me-3'>Sign Up</Link>
+                                <button type="submit" className="btn btn-primary d-block w-100">Login</button>
+                                <Link to="/user-register" className='mt-3 d-block text-center'>Sign Up</Link>
                             </form>
                         </div>
                     </div>

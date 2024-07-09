@@ -56,10 +56,10 @@ function Register() {
 
     return (
         <div className="container">
-            <div className="row">
-                <div className="col-6 offset-2">
-                    <div className="card">
-                        <h5 className="card-header mt-5">User Register</h5>
+            <div className="row justify-content-center">
+                <div className="col-12 col-md-8 col-lg-10">
+                    <div className="card mt-4 mb-4">
+                        <h5 className="BackHeader card-header d-flex justify-content-center p-3">User Register</h5>
                         <div className="card-body">
                             <form onSubmit={handleSubmit} autoComplete="off">
                                 <div className="mb-3">
@@ -82,7 +82,7 @@ function Register() {
                                     <label htmlFor="password" className="form-label">Password</label>
                                     <input type="password" className="form-control" id="password" value={formData.password} onChange={handleChange} />
                                 </div>
-                                <button type="submit" className="btn btn-primary">Register</button>
+                                <button type="submit" className="btn btn-primary d-block w-100">Register</button>
                             </form>
                         </div>
                     </div>

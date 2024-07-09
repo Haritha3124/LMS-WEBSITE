@@ -42,9 +42,9 @@ function FavouriteCourses() {
       <div className="row">
         <section className="col-md-12">
           <div className="card">
-            <h5 className="card-header">Favourite Courses</h5>
-            <div className="card-body">
-              <table className="table table-bordered">
+            <h5 className="BackHeader card-header d-flex justify-content-center">Favourite Courses</h5>
+            <div className="BackBody card-body">
+              <table className="table table-bordered roundedTable">
                 <thead>
                   <tr>
                     <th>Course Name</th>
@@ -60,14 +60,9 @@ function FavouriteCourses() {
                       <td>{item.user_title}</td>
                       <td>{item.user_duration}</td>
                       <td>
-                        {/* <Link to={item.user_link}>
-                          <button className="btn btn-sm btn-danger">
-                            <i className="bi bi-youtube"></i> Watch
-                          </button>
-                        </Link> */}
                         <button
                           onClick={() => removeCart(item.id)}
-                          className="btn btn-sm btn-danger m-2"
+                          className="btn btn-sm custom-remove m-2"
                         >
                           Remove
                         </button>

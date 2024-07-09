@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 function Footer() {
     return (
     /* eslint-disable jsx-a11y/anchor-is-valid */
-    <footer className="footer bg-dark text-light py-3">
+    <footer className="footer navbar-custom text-light py-3">
       <div className="container">
         <div className="row">
           <div className="col-md-4">
@@ -11,9 +12,9 @@ function Footer() {
           <div className="col-md-4">
             <h5>Social Media</h5>
             <ul className="list-inline">
-            <li>Website - <a href="https://kgitservices.com/about-us/">KG IT Services</a></li>
-            <li >linkedIn - <a href="#">kgit_it_services</a></li>  
-            <li>Phone.no - <a href="#">+91 8123096140</a></li>
+            <li>Website - <Link to="https://kgitservices.com/about-us/" className="text-light">KG IT Services</Link></li>
+            <li >linkedIn - <Link to="https://www.linkedin.com/company/kgit-computer-services/posts/?feedView=all" className="text-light">kgit_it_services</Link></li>  
+            <li>Phone.no - +91 8123096140</li>
             </ul>
           </div>
           <div className="col-md-4">

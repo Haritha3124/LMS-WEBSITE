@@ -4,7 +4,6 @@
   flex-direction: column;
 }
 
-
 .footer {
   margin-top: auto;
 }
@@ -33,9 +32,101 @@
   flex-direction: column;
 }
 
+.hovercard{
+  transition: transform 0.2s ease-in-out;
+  border: 1px solid #ddd;
+}
+
+.hovercard:hover {
+  transform:scale(1.1); 
+  z-index: 0.5;
+  border-color: #6a1b9a; 
+  box-shadow: 0 0 10px 2px #6a1b9a;
+}
+
 .card-body {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+
+body {
+  background-image: url('../public/assats/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+  height: 100%;
+  padding: 0;
+}
+
+.BackHeader{
+  background: rgb(252,241,255);
+  background: linear-gradient(90deg, rgba(252,241,255,1) 0%, rgba(248,216,255,1) 48%, rgba(252,241,255,1) 100%);
+}
+
+.BackBody{
+  background: rgb(252,241,255);
+}
+
+.roundedTable {
+  border-collapse: separate;
+  border-spacing: 0; 
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.navbar-custom{
+  background-color: #6a1b9a;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link{
+  color: white !important;
+}
+
+.navbar-custom .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.custom-button {
+  background-color: #6a1b9a !important;
+  color: white !important;
+}
+
+.custom-button:hover {
+  background-color: #4b0082 !important;
+}
+
+.custom-watch{
+  background-color: #e6e6fa !important;
+}
+
+.custom-watch:hover{
+  background-color: #4b0082 !important;
+  color: white !important;
+}
+
+.custom-remove{
+  background-color: #f8bbd0 !important;
+}
+
+.custom-remove:hover{
+  background-color: rgb(188, 20, 20) !important;
+  color:white !important;
+}
+
+
+.custom-cart{
+  background-color: #f8bbd0 !important;
+}
+
+.custom-favourite{
+  background-color: #e6e6fa !important;
+}
+
+.about{
+  background-color: #6a1b9a;
 }

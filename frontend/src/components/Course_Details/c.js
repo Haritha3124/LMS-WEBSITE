@@ -190,10 +190,10 @@ function C() {
       
       {/* Course Videos */}
       <div className="card mt-4 mb-5">
-        <div className="card-header">
+        <div className="BackHeader card-header d-flex justify-content-center">
             <h3>Course Videos</h3>
         </div>
-        <div className="card-body">
+        <div className="BackBody card-body">
         <table className="table table-bordered">
                   <thead>
                     <tr>

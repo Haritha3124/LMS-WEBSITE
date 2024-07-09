@@ -42,10 +42,10 @@ function MyCourses() {
       <div className="row">
         <section className="col-md-12">
           <div className="card">
-            <h5 className="card-header">My Courses</h5>
-            <div className="card-body">
-              <table className="table table-bordered">
-                <thead>
+            <h5 className="BackHeader card-header d-flex justify-content-center">My Courses</h5>
+            <div className="BackBody card-body">
+              <table className="table table-bordered roundedTable">
+                <thead className="p-1">
                   <tr>
                     <th>Course Name</th>
                     <th>Title</th>
@@ -60,8 +60,8 @@ function MyCourses() {
                       <td>{item.user_title}</td>
                       <td>{item.user_duration}</td>
                       <td>
-                        <Link to={item.user_link}><button className="btn btn-sm btn-danger m-2"><i className="bi bi-youtube"></i> Watch</button></Link>
-                        <button onClick={() => removeFromCart(item.id)} className="btn btn-sm btn-danger m-2">Remove</button>
+                        <Link to={item.user_link}><button className="btn btn-sm custom-watch m-2"><i className="bi bi-youtube"></i> Watch</button></Link>
+                        <button onClick={() => removeFromCart(item.id)} className="btn custom-remove m-2">Remove</button>
                       </td>
                     </tr>
                   ))}

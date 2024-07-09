@@ -5,7 +5,7 @@ function Header() {
   let {logoutUser} = useContext(AuthContext);
     return (
     /* eslint-disable jsx-a11y/anchor-is-valid */ 
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark text-white" >
+      <nav className="navbar navbar-expand-lg navbar-custom p-3" >
         <div className="container-fluid ">
           <Link className="navbar-brand mx-5 mt-2" to="/">Learning Management System</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

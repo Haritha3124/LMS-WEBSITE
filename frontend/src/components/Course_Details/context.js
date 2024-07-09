@@ -13,7 +13,6 @@ const AuthContext = createContext({
 export default AuthContext;
 
 export const AuthProvider = ({ children }) => {
-    // localStorage.getItem('authtokens') 
     const [authTokens, setAuthTokens] = useState(() => localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null);
     const [loguser, setLogUser] = useState(() => localStorage.getItem('authTokens') ? jwtDecode(localStorage.getItem('authTokens')) : null);
     const [course, setCourse] = useState([]);
@@ -128,18 +127,18 @@ export const AuthProvider = ({ children }) => {
         <AuthContext.Provider value={contextData}>
             {loading ? null : children}
             <ToastContainer
-            position="top-center"
-            autoClose={2000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="dark"
-            transition={Flip}
-        />
+                position="top-center"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+                transition={Flip}
+            />
         </AuthContext.Provider>
     );
 };

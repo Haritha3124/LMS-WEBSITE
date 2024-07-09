@@ -28,98 +28,98 @@ function Home() {
         <h3 className="border-bottom pb-1 mt-4">Latest Courses </h3> 
         <div className="row justify-content-center row-cols-auto">
           <div className="col-12 col-md-2 col-sm-4">
-            <div className="card ">
+            <div className="hovercard card ">
               <div className="image"><Link to='./python'><img src="/assats/python.jpeg" className="card-img-top" alt="..." /></Link></div>
               
               <div className="card-body">
                 {/* <h5 className="card-title"><Link to="/detail/1">React</Link></h5> */}
-                <Link to="./python" className="btn btn-primary float-end">Python</Link>
+                <Link to="./python" className="custom-button btn float-end">Python</Link>
               </div>
             </div>
           </div>
           <div className="col-12 col-md-2 col-sm-4">
-            <div className="card">
+            <div className="hovercard card">
               <div className="image"><Link to='./c'><img src="/assats/C.jpeg" className="card-img-top" alt="..." /></Link></div>
               
               <div className="card-body">
-              <Link to="./c" className="btn btn-primary float-end">C</Link>
+              <Link to="./c" className=" custom-button btn float-end">C</Link>
               </div>
             </div>
           </div>
           <div className="col-12 col-md-2 col-sm-4">
-            <div className="card">
+            <div className="hovercard card">
             <div className="image"><Link to='./mysql'><img src="/assats/mysql.jpeg" className="card-img-top" alt="..." /></Link></div>
               <div className="card-body">
-              <Link to="./mysql" className="btn btn-primary float-end">MySQL</Link>
+              <Link to="./mysql" className="custom-button btn float-end">MySQL</Link>
               </div>
             </div>
           </div>
           <div className="col-12 col-md-2 col-sm-4">
-            <div className="card">
+            <div className="hovercard card">
             <div className="image"><Link to='./html'><img src="/assats/html.jpeg" className="card-img-top" alt="..." /></Link></div>
               <div className="card-body">
-              <Link to="./html" className="btn btn-primary float-end">HTML </Link>
+              <Link to="./html" className=" custom-button btn float-end">HTML </Link>
               </div>
             </div>
           </div>
           <div className="col-12 col-md-2 col-sm-4">
-            <div className="card">
+            <div className="hovercard card">
             <div className="image"><Link to='./css'><img src="/assats/css.jpeg" className="card-img-top" alt="..." /></Link></div>
               <div className="card-body">
-              <Link to="./css" className="btn btn-primary float-end">CSS </Link>
+              <Link to="./css" className="custom-button btn float-end">CSS </Link>
               </div>
             </div>
           </div>
         </div>
         {/* End Latest Course */}
-        {/* Random Course */}
+        {/* Offered Course */}
         <h3 className="border-bottom pb-1 my-4 mt-3">Offered Courses </h3>
         <div className="row justify-content-center row-cols-auto">
           <div className="col-12 col-md-2 col-sm-4">
-            <div className="card">
+            <div className="hovercard card">
             <div className="image"><Link to='./mongodb'><img src="/assats/mongodb.jpeg" className="card-img-top" alt="..." /></Link></div>
               <div className="card-body">
-              <Link to="./mongodb" className="btn btn-primary float-end">Mongodb </Link>
+              <Link to="./mongodb" className="custom-button btn float-end">Mongodb </Link>
               </div>
             </div>
           </div>
           <div className="col-12 col-md-2 col-sm-4">
-            <div className="card">
+            <div className="hovercard card">
             <div className="image"><Link to='./javascript'><img src="/assats/js.jpeg" className="card-img-top" alt="..." /></Link></div>
               <div className="card-body">
-              <Link to="./javascript" className="btn btn-primary float-end">Javascript </Link>
+              <Link to="./javascript" className="custom-button btn float-end">Javascript </Link>
               </div>
             </div>
           </div>
           <div className="col-12 col-md-2 col-sm-4">
-            <div className="card">
+            <div className="hovercard card">
             <div className="image"><Link to='./r'><img src="/assats/r.jpeg" className="card-img-top" alt="..." /></Link></div>
               <div className="card-body">
-              <Link to="./r" className="btn btn-primary float-end">R </Link>
+              <Link to="./r" className="custom-button btn float-end">R </Link>
               </div>
             </div>
           </div>
           <div className="col-12 col-md-2 col-sm-4">
-            <div className="card">
+            <div className="hovercard card">
             <div className="image"><Link to='./java'><img src="/assats/java.jpeg" className="card-img-top" alt="..." /></Link></div> 
               <div className="card-body">
-              <Link to="./java" className="btn btn-primary float-end">JAVA </Link>
+              <Link to="./java" className="custom-button btn float-end">JAVA </Link>
               </div>
             </div>
           </div>
           <div className="col-12 col-md-2 col-sm-4">
-            <div className="card">
+            <div className="hovercard card">
             <div className="image"><Link to='./php'><img src="/assats/php.jpeg" className="card-img-top" alt="..." /></Link></div>
               <div className="card-body">
-              <Link to="./php" className="btn btn-primary float-end">PHP </Link>
+              <Link to="./php" className="custom-button btn float-end">PHP </Link>
               </div>
             </div>
           </div>
         </div>
-        {/* End Random Course */}
-        {/* Student Testimonial */}
+        {/* End Offered Course */}
+        {/* About */}
         <h3 className="border-bottom pb-1 my-4 mt-3">About </h3>
-        <div id="carouselExampleControls" className="carousel slide bg-dark text-white py-4" data-bs-ride="carousel">
+        <div id="carouselExampleControls" className="about carousel slide text-white py-4" data-bs-ride="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
               <figure className="text-center">
@@ -152,7 +152,7 @@ function Home() {
             <span className="visually-hidden">Next</span>
           </button>
         </div>
-        {/* Student Testimonial */}
+        {/* About */}
 
       </div>
     );

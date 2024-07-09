@@ -190,16 +190,15 @@ function Python() {
       </div>
       {/* Course Videos */}
       <div className="card mt-4">
-        <div className="card-header">
+        <div className="BackHeader card-header d-flex justify-content-center">
             <h3>Course Videos</h3>
         </div>
         
-      <div className="card-body">
-        <table className="table table-bordered">
+      <div className="BackBody card-body">
+        <table className="table table-bordered roundedTable">
                   <thead>
                     <tr>
                       <th>Course Name</th>
-                      {/* <th>Title</th> */}
                       <th>Duration</th>
                       <th>Add To Cart</th>
                       <th>Add To Favourite</th>
@@ -208,17 +207,16 @@ function Python() {
                   <tbody>
                     {courses.map((course) => (
                       <tr key={course.id}>
-                        {/* <td>{course.user_course_name}</td> */}
                         <td>{course.title}</td>
                         <td>{course.duration}</td>
                         <td>
                           <div className=" d-flex justify-content-center">
-                            <button onClick={() => handleButtonClick(addToCart, course)} className='btn btn-sm btn-primary m-2' disabled={buttonsDisabled}><i className='bi bi-cart-plus'></i></button>
+                            <button onClick={() => handleButtonClick(addToCart, course)} className='btn btn-sm custom-cart m-2' disabled={buttonsDisabled}><i className='bi bi-cart-plus'></i></button>
                           </div>
                         </td>
                         <td>
                           <div className=" d-flex justify-content-center">
-                            <button onClick={() => handleButtonClick(addToFav, course)} className='btn btn-sm btn-danger m-2' disabled={buttonsDisabled}><i className="bi bi-emoji-heart-eyes"></i></button>
+                            <button onClick={() => handleButtonClick(addToFav, course)} className='btn btn-sm custom-favourite m-2' disabled={buttonsDisabled}><i className="bi bi-emoji-heart-eyes"></i></button>
                           </div>
                         </td>
                       </tr>

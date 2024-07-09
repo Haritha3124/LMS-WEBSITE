@@ -17,7 +17,6 @@ import ChangePassword from './User/change_password';
 import Register from './User/register';
 import MyCourses from './User/mycourses';
 import FavouriteCourse from './User/favourite_course';
-import About from './about';
 import Footer from './footer';
 import { AuthProvider } from './Course_Details/context';
 import PrivateRoute from './utils/privateroute';
@@ -30,7 +29,6 @@ function Main() {
         <Routes>
           <Route path="/" element={<PrivateRoute element={Home} />} />
           <Route path="/user-login" element={<Login />} />
-          <Route path="/about" element={<About />} />
           <Route path="/python" element={<Python />} />
           <Route path="/c" element={<C />} />
           <Route path="/mysql" element={<MySql />} />

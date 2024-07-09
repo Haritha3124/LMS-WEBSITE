@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react'; 
 import { jwtDecode } from "jwt-decode";
 import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast, Flip } from "react-toastify";
+import { toast, Flip } from "react-toastify";
 
 const AuthContext = createContext({
     user: [], 
@@ -53,7 +53,7 @@ export const AuthProvider = ({ children }) => {
               });
             navigate('/');
         } else {
-            // alert("Something went wrong");
+            alert("User Not Found!")
             toast.error("User Not Found !", {
                 position: "top-center",
                 autoClose: 1000,
@@ -126,19 +126,6 @@ export const AuthProvider = ({ children }) => {
     return (
         <AuthContext.Provider value={contextData}>
             {loading ? null : children}
-            <ToastContainer
-                position="top-center"
-                autoClose={2000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="dark"
-                transition={Flip}
-            />
         </AuthContext.Provider>
     );
 };

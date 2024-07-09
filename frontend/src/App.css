@@ -1,3 +1,5 @@
+@import "~react-toastify/dist/ReactToastify.css";
+
 .App{
   min-height: 100vh;
   display: flex;
@@ -79,7 +81,7 @@ body {
 }
 
 .navbar-custom{
-  background-color: #6a1b9a;
+  background-color: #8f37b7;
 }
 
 .navbar-custom .navbar-brand,
@@ -146,8 +148,18 @@ body {
   background-color: #f8bbd0 !important;
 }
 
+.custom-cart:hover{
+  transform:scale(0.9); 
+  z-index: 0.5;
+}
+
 .custom-favourite{
   background-color: #e6e6fa !important;
+}
+
+.custom-favourite:hover{
+  transform:scale(0.9); 
+  z-index: 0.5;
 }
 
 .about{

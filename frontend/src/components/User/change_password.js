@@ -43,6 +43,7 @@ function ChangePassword() {
         });
 
         if (response.status === 200) {
+            alert("Password Changed Successfully")
             toast.success("Password Changed Successfully!", {
                 position: "top-center",
                 autoClose: 2000,
@@ -62,6 +63,7 @@ function ChangePassword() {
                 navigate('/user-login');
             }, 2000);
         } else {
+            alert("Error changing password!")
             toast.error("Error changing password!", {
                 position: "top-center",
                 autoClose: 2000,
@@ -73,6 +75,9 @@ function ChangePassword() {
                 theme: "dark",
                 transition: Flip,
             });
+            setOldPassword('');
+            setNewPassword('');
+            setConfirmPassword('');
         }
     };
 

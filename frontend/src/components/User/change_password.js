@@ -86,18 +86,18 @@ function ChangePassword() {
                             <form onSubmit={handleSubmit} autoComplete='off'>
                                 <div className="mb-3">
                                     <label htmlFor="password-old" className="form-label">Old Password:</label>
-                                    <input type="password" className="form-control" id="password-old" value={oldPassword} onChange={(e) => setOldPassword(e.target.value)}/>
+                                    <input type="password" className="form-control changepass" id="password-old" value={oldPassword} onChange={(e) => setOldPassword(e.target.value)}/>
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="password-new" className="form-label">New Password:</label>
-                                    <input type="password" className="form-control" id="password-new" value={newPassword} onChange={(e) => setNewPassword(e.target.value)}/>
+                                    <input type="password" className="form-control changepass" id="password-new" value={newPassword} onChange={(e) => setNewPassword(e.target.value)}/>
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="password-confirm" className="form-label">Confirm Password:</label>
                                     <input 
-                                        type="password" className="form-control" id="password-confirm" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
+                                        type="password" className="form-control changepass" id="password-confirm" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
                                 </div>
-                                <button type="submit" className="btn btn-primary w-100">Submit</button>
+                                <button type="submit" className="btn custom-submit w-100">Submit</button>
                             </form>
                         </div>
                     </div>

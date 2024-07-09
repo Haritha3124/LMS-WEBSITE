@@ -64,25 +64,25 @@ function Register() {
                             <form onSubmit={handleSubmit} autoComplete="off">
                                 <div className="mb-3">
                                     <label htmlFor="first_name" className="form-label">First Name</label>
-                                    <input type="text" className="form-control" id="first_name" value={formData.first_name} onChange={handleChange} />
+                                    <input type="text" className="form-control changepass" id="first_name" value={formData.first_name} onChange={handleChange} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="last_name" className="form-label">Last Name</label>
-                                    <input type="text" className="form-control" id="last_name" value={formData.last_name} onChange={handleChange} />
+                                    <input type="text" className="form-control changepass" id="last_name" value={formData.last_name} onChange={handleChange} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="email" className="form-label">Email Address</label>
-                                    <input type="email" className="form-control" id="email" value={formData.email} onChange={handleChange} />
+                                    <input type="email" className="form-control changepass" id="email" value={formData.email} onChange={handleChange} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="username" className="form-label">User Name</label>
-                                    <input type="text" className="form-control" id="username" value={formData.username} onChange={handleChange} />
+                                    <input type="text" className="form-control changepass" id="username" value={formData.username} onChange={handleChange} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="password" className="form-label">Password</label>
-                                    <input type="password" className="form-control" id="password" value={formData.password} onChange={handleChange} />
+                                    <input type="password" className="form-control changepass" id="password" value={formData.password} onChange={handleChange} />
                                 </div>
-                                <button type="submit" className="btn btn-primary d-block w-100">Register</button>
+                                <button type="submit" className="btn custom-submit d-block w-100">Register</button>
                             </form>
                         </div>
                     </div>

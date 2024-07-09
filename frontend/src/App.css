@@ -87,6 +87,29 @@ body {
   color: white !important;
 }
 
+.navbar-custom .nav-link:hover {
+  color: #ddd;
+}
+
+.navbar-custom .dropdown-menu {
+  background-color: #6a1b9a;
+}
+
+.navbar-custom .dropdown-item {
+  color: white;
+}
+
+.navbar-custom .dropdown-item:hover,
+.navbar-custom .dropdown-item:focus {
+  background-color: #4a0072;
+  color: white;
+}
+
+.navbar-custom .dropdown-item:active {
+  background-color: #6a1b9a;
+  color: white;
+}
+
 .navbar-custom .navbar-toggler-icon {
   filter: invert(1);
 }
@@ -129,4 +152,18 @@ body {
 
 .about{
   background-color: #6a1b9a;
+}
+
+.changepass:hover{
+  box-shadow: 0 0 1px 1px #6a1b9a !important;
+}
+
+.custom-submit {
+  background-color: #6a1b9a !important;
+  color: white !important;
+}
+
+.custom-submit:hover {
+  background-color: #4b0082 !important;
+  box-shadow: 0 0 1px 1px #6a1b9a;
 }

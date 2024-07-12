@@ -15,11 +15,9 @@ function C() {
         console.log("Courses:", response.data);
         const correct = response.data.filter(course => course.course_name.toLowerCase() === "c");
         setCourses(correct);
-        // setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching courses:", error);
-        // setLoading(false);
       });
   }, []);
 
@@ -37,7 +35,6 @@ function C() {
     })
       .then((response) => {
         const existingCourses = response.data;
-        // const courseExist = existingCourses.find((item) => item.user_title === course.title);
         const courseExist = existingCourses.find((item) => item.user_title === course.title && item.user_course_name === course.course_name);
 
 
@@ -109,7 +106,6 @@ function C() {
     })
       .then((response) => {
         const existingCourses = response.data;
-        // const courseExist = existingCourses.find((item) => item.user_title === course.title);
         const courseExist = existingCourses.find((item) => item.user_title === course.title && item.user_course_name === course.course_name);
 
         

@@ -15,11 +15,9 @@ function R() {
         console.log("Courses:", response.data);
         const correct = response.data.filter(course => course.course_name.toLowerCase() === "r");
         setCourses(correct);
-        // setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching courses:", error);
-        // setLoading(false);
       });
   }, []);
 
@@ -37,7 +35,6 @@ function R() {
     })
       .then((response) => {
         const existingCourses = response.data;
-        // const courseExist = existingCourses.find((item) => item.user_title === course.title);
         const courseExist = existingCourses.find((item) => item.user_title === course.title && item.user_course_name === course.course_name);
         
         if (!courseExist) {
@@ -107,7 +104,6 @@ function R() {
     })
       .then((response) => {
         const existingCourses = response.data;
-        // const courseExist = existingCourses.find((item) => item.user_title === course.title);
         const courseExist = existingCourses.find((item) => item.user_title === course.title && item.user_course_name === course.course_name);
 
         
@@ -204,7 +200,6 @@ function R() {
                   <tbody>
                     {courses.map((course) => (
                       <tr key={course.id}>
-                        {/* <td>{course.user_course_name}</td> */}
                         <td>{course.title}</td>
                         <td>{course.duration}</td>
                         <td>

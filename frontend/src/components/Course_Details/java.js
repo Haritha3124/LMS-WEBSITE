@@ -203,7 +203,6 @@ function Java() {
                   <tbody>
                     {courses.map((course) => (
                       <tr key={course.id}>
-                        {/* <td>{course.user_course_name}</td> */}
                         <td>{course.title}</td>
                         <td>{course.duration}</td>
                         <td>

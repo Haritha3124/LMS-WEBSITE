@@ -4,7 +4,6 @@ import { useContext } from 'react';
 function Header() {
   let {logoutUser} = useContext(AuthContext);
     return (
-    /* eslint-disable jsx-a11y/anchor-is-valid */ 
       <nav className="navbar navbar-expand-lg navbar-custom p-3" >
         <div className="container-fluid ">
           <Link className="navbar-brand mx-5 mt-2" to="/">Learning Management System</Link>

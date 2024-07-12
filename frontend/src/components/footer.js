@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 function Footer() {
     return (
-    /* eslint-disable jsx-a11y/anchor-is-valid */
     <footer className="footer navbar-custom text-light py-3">
       <div className="container">
         <div className="row">

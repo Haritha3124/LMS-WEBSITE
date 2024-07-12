@@ -35,7 +35,6 @@ function Python() {
     })
       .then((response) => {
         const existingCourses = response.data;
-        // const courseExist = existingCourses.find((item) => item.user_title === course.title);
         const courseExist = existingCourses.find((item) => item.user_title === course.title && item.user_course_name === course.course_name);
 
         
@@ -107,7 +106,6 @@ function Python() {
     })
       .then((response) => {
         const existingCourses = response.data;
-        // const courseExist = existingCourses.find((item) => item.user_title === course.title);
         const courseExist = existingCourses.find((item) => item.user_title === course.title && item.user_course_name === course.course_name);
 
         

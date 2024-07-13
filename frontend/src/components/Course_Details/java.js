@@ -207,12 +207,12 @@ function Java() {
                         <td>{course.duration}</td>
                         <td>
                           <div className=" d-flex justify-content-center">
-                            <button onClick={() => handleButtonClick(addToCart, course)} className='btn btn-sm btn-primary m-2' disabled={buttonsDisabled}><i className='bi bi-cart-plus'></i></button>
+                            <button onClick={() => handleButtonClick(addToCart, course)} className='btn btn-sm custom-cart m-2' disabled={buttonsDisabled}><i className='bi bi-cart-plus'></i></button>
                           </div>
                         </td>
                         <td>
                           <div className=" d-flex justify-content-center">
-                            <button onClick={() => handleButtonClick(addToFav, course)} className='btn btn-sm btn-danger m-2' disabled={buttonsDisabled}><i class="bi bi-emoji-heart-eyes"></i></button>
+                            <button onClick={() => handleButtonClick(addToFav, course)} className='btn btn-sm custom-favourite m-2' disabled={buttonsDisabled}><i class="bi bi-emoji-heart-eyes"></i></button>
                           </div>
                         </td>
                       </tr>

@@ -19,9 +19,7 @@ function Header() {
                 <Link to="/user-mycourses" className="nav-link">My Courses</Link>
               </li>
               <li className="nav-item dropdown">
-              <button className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                User
-              </button>
+                <button className="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">User</button>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><hr className="dropdown-divider"/></li>
                   <li><Link className="dropdown-item" to="/user-favourite_course">Favourite Courses</Link></li>

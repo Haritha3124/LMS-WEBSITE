@@ -121,7 +121,7 @@ export const AuthProvider = ({ children }) => {
         }, fourMinutes)
         return ()=> clearInterval(interval)
 
-    }, [authTokens, loading])
+    }, [updateToken])
 
     return (
         <AuthContext.Provider value={contextData}>
